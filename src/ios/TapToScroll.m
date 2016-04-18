@@ -25,16 +25,6 @@
 
 @synthesize recognizer;
 
-- (CDVPlugin*)initWithWebView:(UIWebView*)theWebView {
-  self = [super initWithWebView:theWebView];
-  if (self) {
-    initialized = NO;
-    overlay = [[UIWindow alloc] initWithFrame:[UIApplication sharedApplication].statusBarFrame];
-    webView = theWebView;
-  }
-  return self;
-}
-
 -(void) initListener:(CDVInvokedUrlCommand*)command {
     [self.commandDelegate runInBackground:^{
         if (!initialized) {
